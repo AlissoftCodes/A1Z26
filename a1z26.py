@@ -28,7 +28,7 @@ def text_to_a1z26(text: str) -> str:
 	return ''
 
 
-def a1z26_to_text(text):
+def a1z26_to_text(text: str) -> str:
 	"""
 	Converts A1Z26 code into plaintext.
 	Example: text_to_a1z26('8-5-12-12-15, 23-15-18-12-4!')
