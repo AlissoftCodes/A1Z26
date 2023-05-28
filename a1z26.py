@@ -5,7 +5,7 @@ from unidecode import unidecode
 def text_to_a1z26(text: str) -> str:
 	"""
 	Converts plaintext into A1Z26 code.
-	Example: text_to_a1z26('hello, world!')
+	Example: a1z26_to_text('hello, world!')
 	Output: 8-5-12-12-15, 23-15-18-12-4!
 	"""
 
@@ -27,10 +27,10 @@ def text_to_a1z26(text: str) -> str:
 	return ''
 
 
-def a1z26_to_text(text: str) -> str:
+def a1z26_to_text(text):
 	"""
 	Converts A1Z26 code into plaintext.
-	Example: a1z26_to_text('8-5-12-12-15, 23-15-18-12-4!')
+	Example: text_to_a1z26('8-5-12-12-15, 23-15-18-12-4!')
 	Output: HELLO, WORLD!
 	"""
 
@@ -41,7 +41,7 @@ def a1z26_to_text(text: str) -> str:
 		for word in text.split():
 			for char in word.split('-'):
 				cache = []
-				if char.isnumeric():
+				if char.isnumeric() and 0 < int(char) < 27:
 					transformed.append(chr(int(char)+64))
 				else:
 					for c in char:
@@ -53,7 +53,7 @@ def a1z26_to_text(text: str) -> str:
 							cache += c
 
 					for i in cache:
-						if i.isnumeric():
+						if i.isnumeric() and 0 < int(i) < 27:
 							transformed.append(chr(int(i) + 64))
 						else:
 							transformed.append(i)
