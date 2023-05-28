@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import string
 from unidecode import unidecode
 
 
