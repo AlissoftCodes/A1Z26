@@ -2,6 +2,7 @@
 from unidecode import unidecode
 
 
+
 def text_to_a1z26(text: str) -> str:
 	"""
 	Converts plaintext into A1Z26 code.
